@@ -11,27 +11,33 @@ if (!isset($_SESSION['question_index'])) {
     $_SESSION['correct_answers'] = 0;
 }
 
-
+// Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Click sur Confirmer
-    $submitted_answer = $_POST['reponse'];
-    $correct_answer = $data->questions[$_SESSION['question_index']]->reponse;
-    // Verifier si c'est la bonne réponse
-    if ($submitted_answer == "réponse " . $correct_answer) {
-        $_SESSION['correct_answers']++; 
-        // Envoyer le feedback correct
-        $feedback_message = '<p style="color=green;">Correct!</p>';
+    // Vérifier si une réponse a été sélectionnée
+    if (!isset($_POST['reponse'])) {
+        // Afficher un message d'erreur et ne pas procéder à la vérification de la réponse
+        $feedback_message = '<p style="color:red;">Veuillez sélectionner une réponse avant de confirmer !</p>';
     } else {
-        // Sinon Envoyer le feedback incorrect
-        $feedback_message = '<p style="color=red;">Incorrect!</p>';
-    }
+        // réponse sélectionnée
+        $submitted_answer = $_POST['reponse'];
+        $correct_answer = $data->questions[$_SESSION['question_index']]->reponse;
+        // Verifier si c'est la bonne réponse
+        if ($submitted_answer == "réponse " . $correct_answer) {
+            $_SESSION['correct_answers']++; 
+            // Envoyer le feedback correct
+            $feedback_message = '<p style="color:green;">Correct!</p>';
+        } else {
+            // Sinon Envoyer le feedback incorrect
+            $feedback_message = '<p style="color:red;">Incorrect!</p>';
+        }
 
-    // Verifier si on a fini les questions pour renvoyer vers result.php
-    if ($_SESSION['question_index'] < count($data->questions) - 1) {
-        $_SESSION['question_index']++;
-    }else if ($_SESSION['question_index'] == count($data->questions) - 1) {
-        header('Location: result.php');
-        exit();
+        // Verifier si on a fini les questions pour renvoyer vers result.php
+        if ($_SESSION['question_index'] < count($data->questions) - 1) {
+            $_SESSION['question_index']++;
+        } else if ($_SESSION['question_index'] == count($data->questions) - 1) {
+            header('Location: result.php');
+            exit();
+        }
     }
 }
 
@@ -46,26 +52,6 @@ $question_index = $_SESSION['question_index'];
     <meta charset="utf-8">
     <title>Projet NSI - Quiz Python</title>
     <link rel="stylesheet" href="quizz.css">
-    // Script trouvé sur internet et modifié pour qu'il convienne au site permettant de bloquer tout utilisateur ne choisisant pas de réponse
-    <script>
-        function validateForm() {
-            var radios = document.getElementsByName("reponse");
-            var formValid = false;
-
-            for (var i = 0; i < radios.length; i++) {
-                if (radios[i].checked) {
-                    formValid = true;
-                    break;
-                }
-            }
-
-            if (!formValid) {
-                alert("Veuillez sélectionner une réponse !");
-            }
-
-            return formValid;
-        }
-    </script>
 </head>
 <body>
 
@@ -87,3 +73,4 @@ $question_index = $_SESSION['question_index'];
 </div>
 </body>
 </html>
+
