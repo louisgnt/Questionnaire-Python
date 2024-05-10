@@ -12,6 +12,7 @@ $fileContent = file_get_contents($file);
 $lines = explode("\n", $fileContent);
 
 $found = false;
+// Verifier si le session ID a deja joué
 foreach ($lines as &$line) {
     $data = explode(",", $line);
     if ($data[0] === $session_id) {
@@ -22,7 +23,7 @@ foreach ($lines as &$line) {
     }
 }
 
-
+// Sinon ajouter une nouvelle ligne
 if (!$found) {
     $lines[] = "$session_id,$correct_answers/10\n";
 }
@@ -30,6 +31,7 @@ if (!$found) {
 
 file_put_contents($file, implode("\n", $lines), LOCK_EX);
 
+// Fermer session
 session_unset();
 session_destroy();
 ?>
