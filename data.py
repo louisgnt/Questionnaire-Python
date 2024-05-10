@@ -2,14 +2,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import requests
 
-# Télécharger le contenu du lien
-url = "https://nsigp04.alwaysdata.net/results.txt"  # Remplacez ceci par le lien réel
+# Obtenir le contenue de la page 
+url = "https://nsigp04.alwaysdata.net/results.txt"
 response = requests.get(url)
 data = response.text
 
 results = []
 
-# Parcourir les lignes du contenu téléchargé
+# Checker les lignes
 for line in data.split('\n')[1:]:
     if line.strip():
         data = line.strip().split(',')
@@ -17,7 +17,7 @@ for line in data.split('\n')[1:]:
 
 score_counts = [results.count(i) for i in range(11)]
 
-
+# Renvoyer le tableau
 plt.figure(figsize=(10, 6))
 plt.bar(range(11), score_counts, color='blue')
 plt.xlabel('Résultat sur 10')
