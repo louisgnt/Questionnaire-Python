@@ -1,26 +1,32 @@
 <?php 
+// Ouvrir une session
 session_start();
+// Recup les données du fichier json
 $json = file_get_contents("questions.json");
 $data = json_decode($json);
 
-
+// Reset
 if (!isset($_SESSION['question_index'])) {
     $_SESSION['question_index'] = 0;
     $_SESSION['correct_answers'] = 0;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Click sur Confirmer
     $submitted_answer = $_POST['reponse'];
     $correct_answer = $data->questions[$_SESSION['question_index']]->reponse;
-    
+    // Verifier si c'est la bonne réponse
     if ($submitted_answer == "réponse " . $correct_answer) {
         $_SESSION['correct_answers']++; 
+        // Envoyer le feedback correct
         $feedback_message = '<p style="color=green;">Correct!</p>';
     } else {
+        // Sinon Envoyer le feedback incorrect
         $feedback_message = '<p style="color=red;">Incorrect!</p>';
     }
-    
+
+    // Verifier si on a fini les questions pour renvoyer vers result.php
     if ($_SESSION['question_index'] < count($data->questions) - 1) {
         $_SESSION['question_index']++;
     }else if ($_SESSION['question_index'] == count($data->questions) - 1) {
@@ -29,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+// Question index = Premier question, Deuxieme etc
 $question_index = $_SESSION['question_index'];
 
 ?>
