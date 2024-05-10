@@ -46,6 +46,7 @@ $question_index = $_SESSION['question_index'];
     <meta charset="utf-8">
     <title>Projet NSI - Quiz Python</title>
     <link rel="stylesheet" href="quizz.css">
+    // Script trouvé sur internet et modifié pour qu'il convienne au site permettant de bloquer tout utilisateur ne choisisant pas de réponse
     <script>
         function validateForm() {
             var radios = document.getElementsByName("reponse");
