@@ -46,6 +46,25 @@ $question_index = $_SESSION['question_index'];
     <meta charset="utf-8">
     <title>Projet NSI - Quiz Python</title>
     <link rel="stylesheet" href="quizz.css">
+    <script>
+        function validateForm() {
+            var radios = document.getElementsByName("reponse");
+            var formValid = false;
+
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    formValid = true;
+                    break;
+                }
+            }
+
+            if (!formValid) {
+                alert("Veuillez sélectionner une réponse !");
+            }
+
+            return formValid;
+        }
+    </script>
 </head>
 <body>
 
