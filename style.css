@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+h1 {
+  font-size: 20px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body,
+html {
+  height: 100%;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(210, 40%, 96%, 1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='1' stroke='hsla(215, 20%, 65%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000000;
+  background-color: #e2e8f0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(210, 40%, 96%, 1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='1' stroke='hsla(215, 20%, 65%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  background-attachment: fixed;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 100%;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  border: none;
+  color: #fff;
+  background-color: rgb(88, 101, 242);
+  transition: background-color 0.17s ease, color 0.17s ease;
+}
+
+button:hover {
+  background-color: rgb(71, 82, 196);
+}
+
+.navbar {
+  background-color: rgb(71, 82, 196);
+  color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 100px;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.navbar ul li:last-child {
+  margin-right: 0;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+#card {
+  display: flex;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 16px;
+  border: solid 2.5px;
+  border-color: dodgerblue;
+}
+
+#card img {
+  flex: 1;
+  max-width: 50%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#text_field {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+#card2 {
+  display: flex;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 16px;
+  border: solid 2.5px;
+  border-color: dodgerblue;
+}
+
+#card2 img {
+  flex: 1;
+  max-width: 50%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#text_field2 {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  order: -1; /* Inversion de l'ordre des éléments */
+}
+
+footer {
+  background-color: rgb(88, 101, 242);
+  color: #fff;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.content p,
+.content a {
+  margin-bottom: 10px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content ul li {
+  margin-bottom: 10px;
+}
+
+.content ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.content ul li a:hover {
+  text-decoration: underline;
+}
+
+.mentions-legales {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 16px;
+  border: solid 2.5px;
+  border-color: dodgerblue;
+  margin-bottom: 128px;
+}
+
+.mentions-legales h1 {
+  display: flex;
+  justify-content: start;
+  padding-bottom: 5px;
+}
+
+.mentions-legales p {
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #card,
+  #card2 {
+    max-width: 90%; /* Réduire la largeur maximale des cartes */
+    margin: 0 auto; /* Centrer les cartes horizontalement */
+    margin-bottom: 50px; /* Réduire la marge inférieure des cartes */
+  }
+
+  #card img,
+  #card2 img {
+    max-width: 100%; /* Assurer que les images restent dans les limites des cartes */
+    border-radius: 0; /* Supprimer la bordure arrondie des images */
+  }
+}

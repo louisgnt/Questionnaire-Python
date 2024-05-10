@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "question": "Quel est le résultat de 2 + 2 en Python ?",
+      "options": ["3", "4", "5"],
+      "reponse": 1
+    },
+    {
+      "question": "Comment déclare-t-on une liste vide en Python ?",
+      "options": ["list = []", "list = {}", "list()"],
+      "reponse": 0
+    },
+    {
+      "question": "Quelle est la fonction utilisée pour afficher quelque chose à l'écran en Python ?",
+      "options": ["print()", "show()", "display()"],
+      "reponse": 0
+    },
+    {
+      "question": "Quel mot-clé est utilisé pour créer une fonction en Python ?",
+      "options": ["def", "function", "define"],
+      "reponse": 0
+    },
+    {
+      "question": "Quel est le résultat de l'expression booléenne suivante: True and False ?",
+      "options": ["True", "False", "None"],
+      "reponse": 1
+    },
+    {
+      "question": "Comment accède-t-on au dernier élément d'une liste en Python ?",
+      "options": ["list[-1]", "list[last]", "list.last()"],
+      "reponse": 0
+    },
+    {
+      "question": "Quelle est la méthode pour ajouter un élément à la fin d'une liste en Python ?",
+      "options": ["append()", "add()", "insert()"],
+      "reponse": 0
+    },
+    {
+      "question": "Quelle est la fonction utilisée pour obtenir la longueur d'une chaîne de caractères en Python ?",
+      "options": ["length()", "len()", "size()"],
+      "reponse": 1
+    },
+    {
+      "question": "Quelle est la méthode pour ouvrir un fichier en Python ?",
+      "options": ["open()", "read()", "start()"],
+      "reponse": 0
+    },
+    {
+      "question": "Quel opérateur est utilisé pour la concaténation de chaînes de caractères en Python ?",
+      "options": ["&", "+", "%"],
+      "reponse": 1
+    }
+  ]
+}
